@@ -26,7 +26,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
   
     <style>
-    
       body, h1, h2, h3, h4, h5, h6, p, a, button, .navbar, #services, #portfolio, #reviews, footer {
         font-family: 'Rajdhani', sans-serif;
       }
@@ -83,14 +82,14 @@
         font-weight: 600;
         font-size: 1rem;
       }
+    
       .navbar-toggler {
         display: none;
       }
-  
+    
       .navbar-toggler-icon {
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
       }
-  
     
       @media (max-width: 991px) {
         .navbar-inner {
@@ -172,7 +171,6 @@
         font-size: 1.25rem;
       }
     
-      /* ✅ Portfolio Grid Stack and Center */
       .grid {
         display: flex;
         flex-wrap: wrap;
@@ -203,7 +201,6 @@
         transform: scale(1.03);
       }
     
-      /* ✅ Services Styling Matches Portfolio */
       #services .service_item {
         max-width: 700px;
         margin: 0 auto 40px;
@@ -220,19 +217,16 @@
         justify-content: center;
       }
     
-      /* ✅ Center the Review Section */
       #reviews .container {
         max-width: 700px;
         margin: 0 auto;
       }
     
-      /* ✅ Center the Footer */
       footer .container {
         max-width: 700px;
         margin: 0 auto;
       }
     
-      /* 📱 Mobile Optimizations */
       @media (max-width: 768px) {
         .carousel-caption h1 { font-size: 28px; }
         .carousel-caption h2 { font-size: 22px; }
@@ -251,13 +245,12 @@
     
         .grid-image,
         #services .service_item img {
-          width: 250px;
+          width: 200px;
           height: auto;
           max-width: 600px;
         }
       }
     
-      /* Footer Styling */
       .footer_item p,
       .footer_item h4 {
         font-size: 0.9rem;
@@ -269,7 +262,15 @@
         width: 100%;
         margin: 20px 0;
       }
+    
+      /* ✅ Fancybox Image Size Fix */
+      .fancybox__content > .fancybox__slide > img {
+        max-width: 90vw !important;
+        max-height: 90vh !important;
+        object-fit: contain;
+      }
     </style>
+    
     
     
     
@@ -675,5 +676,23 @@
         <p style="font-size: 0.8rem;">made by devpros555</p>
       </div>
     </footer>
-  </div>
-</body>
+    
+    <!-- ✅ Fancybox JS Script -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+    <script>
+      Fancybox.bind("[data-fancybox='gallery']", {
+        Toolbar: {
+          display: ["zoom", "fullscreen", "close"]
+        },
+        Thumbs: false,
+        Image: {
+          zoom: true,
+          click: "close",
+          wheel: "zoom"
+        }
+      });
+    </script>
+    
+    </body>
+    </html>
+    
